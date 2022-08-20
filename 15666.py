@@ -11,9 +11,14 @@ N, M = map(int, input().split())
 number = list(map(int, input().split()))
 number = sorted(number)
 
-lst = itertools.combinations_with_replacement(number, M)
+lst = list(itertools.combinations_with_replacement(number, M))
+lst = list(set(lst))
+lst.sort()
 
 for i in lst:
     for j in i:
         print(j, end = " ")
     print()
+
+# itertools의 중복조합을 사용한 문제였다.
+# set()를 통해서 중복되는 요소를 제거하고 리스트로 바꾼 다음 오름차순 정렬하여 쉽게 풀 수 있었다.
