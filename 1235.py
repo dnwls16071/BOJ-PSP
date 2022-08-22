@@ -17,14 +17,18 @@
 # 학생들의 번호가 주어 졌을 때, 뒤에서 k자리만을 추려서 남겨 놓았을 때 모든 학생들의 학생 번호를 서로 다르게 만들 수 있는 최소의 k를 구하는 프로그램을 작성하시오.
 
 N = int(input())
+number = [input() for _ in range(N)]
 
-student_number = []
-for i in range(N):
-    student_number.append(input())
+# 모든 학생들의 학생 번호는 서로 다르지만 그 길이가 모두 같으므로 첫 번째 값을 이용해도 상관없다.
+for i in range(1, len(number[0])+1):
+    result = []
+    for j in range(N):
+        if number[j][-i:] in result:
+            continue
+        else:
+            result.append(number[j][-i:])
 
-result = []
-for j in student_number:
-    result.append(j[-i:])
+    if len(result) == N:
+        print(i)
+        break
 
-if len(result) == N:
-    print(i+1)
