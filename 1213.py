@@ -6,23 +6,26 @@
 
 # 임문빈을 도와 임한수의 영어 이름을 팰린드롬으로 바꾸는 프로그램을 작성하시오.
 
-if __name__ == "__main__":
-    from itertools import combinations
-    English_name = input()
-    lst = combinations(English_name, 4)
-    flag = True
-    for i in lst:
-        length = len(i)
-        for j in range((length//2)+1):
-            if i[j] == i[length-j]:
-                continue
-            else:
-                flag = False
-                break
-        
-        result = []
-        if flag == True:
-            result.append(i)
-        if result == []:
-            print("I'm Sorry Hansoo")
-    print(*result)
+from collections import Counter
+n = input()
+p = Counter(n)
+string = ""
+for key, val in p.items():
+    if val % 2 != 0:    # 문자가 홀수개라면?
+        string += key
+if len(string) > 1:    # 짝수개인 문자를 제외하고 나머지 문자들의 길이가 1을 넘으면?
+    print("I'm Sorry Hansoo")
+else:
+    d = sorted(p.items())
+    for j in d:
+        print(j[0] * (j[1] // 2), end = "")
+    print(string, end = "")
+    for j in d[::-1]:
+        print(j[0] * (j[1] // 2), end = "")
+
+# 실버4 난이도 문제치고는 많이 까다로웠다.
+# 팰린드롬 문자열의 형성 조건을 따져 보면 다음과 같이 정리할 수 있다.
+
+# 짝수 길이 문자열 기준 => 각 알파벳의 빈도가 짝수여야 가능함
+# 짝수 길이 문자열 기준 => 각 알파벳의 빈도가 홀수인 경우가 2개 이상 나오면 팰린드롬 문자열 형성 X
+# 홀수 길이 문자열 기준 => string을 중간에 배치하고 짝수번 등장한 알파벳들을 교차로 입력
