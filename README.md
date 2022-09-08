@@ -9,7 +9,7 @@ Baekjoon Online Judge Problems Solving by Python(파이썬을 이용한 백준 �
 ![Swift](https://img.shields.io/badge/Swift-007396.svg?&style=for-the-badge&logo=Swift&logoColor=red)
 ![PHP](https://img.shields.io/badge/PHP-007396.svg?&style=for-the-badge&logo=PHP&logoColor=blue)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dnwls16071&layout=compact)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dnwls16071&layout=Demo&theme=merko)
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=dnwls16071&show_icons=true&theme=radical)
 
