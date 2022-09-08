@@ -11,6 +11,6 @@ Baekjoon Online Judge Problems Solving by Python(파이썬을 이용한 백준 �
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dnwls16071)](https://github.com/dnwls16071/github-readme-stats)
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=dnwls4659)](https://solved.ac/dnwls4659/)
+![Solved.ac Profile](http://mazassumnida.wtf/api/generate_badge?boj=dnwls4659)
 
 ![dnwls16071 GitHub stats](https://github-readme-stats.vercel.app/api?username=dnwls16071&show_icons=true&theme=synthwave)
