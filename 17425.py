@@ -2,6 +2,7 @@
 #
 # 자연수 N이 주어졌을 때, g(N)을 구해보자.
 
+# Code1 => 시간초과
 def f(A):
     total = 0
     for i in range(1, A+1):
@@ -21,3 +22,29 @@ T = int(input())
 for _ in range(T):
     N = int(input())
     print(g(N))
+
+# Code2
+import sys
+input = sys.stdin.readline
+
+MAX = 1000000
+dp = [0] * (MAX + 1)    # dp테이블
+dp_sum = [0] * (MAX + 1)    # dp테이블 누적합
+
+for i in range(1, MAX+1):
+    j = 1
+    while i * j <= MAX:
+        dp[i * j] += i
+        j += 1
+    dp_sum[i] = dp_sum[i-1] + dp[i]
+
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    print(dp_sum[N])
+
+# Code1은 일반적인 함수로 작성한 코드인데 시간초과가 발생했다.
+
+# Code2 설명
+# dp[i] = i의 약수의 합
+# dp_sum[i] = 1 ~ i까지의 약수의 합(dp테이블의 누적 배열)
